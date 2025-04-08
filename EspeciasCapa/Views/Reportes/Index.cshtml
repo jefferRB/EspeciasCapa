@@ -1,0 +1,153 @@
+﻿@{
+    ViewData["Title"] = "Reportes";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Mi Aplicación</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            color: #000;
+        }
+
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .main-sidebar {
+            background-color: #64d869 !important;
+            min-height: 100vh;
+        }
+
+        .brand-link {
+            background-color: #64d869 !important;
+            color: #ffffff !important;
+        }
+
+        .nav-link.active {
+            background-color: #64d869 !important;
+            color: #ffffff !important;
+        }
+
+        .main-sidebar .nav-sidebar .nav-link:hover {
+            background-color: #64d869 !important;
+            color: #ffffff !important;
+        }
+
+            .main-sidebar .nav-sidebar .nav-link:hover i,
+            .main-sidebar .nav-sidebar .nav-link:hover p {
+                color: #ffffff !important;
+            }
+
+        .content-wrapper {
+            margin-top: 0;
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .main-footer {
+            background-color: #64d869;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+            margin-top: auto;
+        }
+
+        table {
+            margin-top: 10px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .btn-sm i {
+            margin-right: 4px;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: #000;
+        }
+
+        .btn-editar {
+            background-color: #e2e11d;
+            color: #000;
+            border: none;
+        }
+
+        .btn-eliminar {
+            background-color: #e1322d;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-editar:hover,
+        .btn-eliminar:hover {
+            opacity: 0.9;
+        }
+    </style>
+
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h2>Reportes</h2>
+                </div>
+            </div>
+          
+            <div class="section-card" style="background-color: #ffffff; border-radius: 8px; padding: 20px; border: 1px solid #ddd;">
+                <h3>Listado de reportes</h3>
+                <div class="mb-3">
+                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Crear Reporte</a>
+                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Busqueda de Reportes</a>
+                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Generar Reportes(csv o pdf)</a>
+                </div>
+
+
+                <div class="content">
+                    <div class="container-fluid">
+                        <table class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Detalle del reporte</th>
+                                    <th>Fecha de emisión</th>
+                                  
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+</body>
+</html>
