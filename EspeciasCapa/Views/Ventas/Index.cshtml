@@ -13,22 +13,20 @@
 
     <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
+
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            color: #000;
+        .content-wrapper, .main-footer {
+            margin-left: 250px;
         }
 
-        .wrapper {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
+        .main-footer {
+            background-color: #64d869;
+            padding: 1rem;
+            color: #fff;
         }
 
         .main-sidebar {
             background-color: #64d869 !important;
-            min-height: 100vh;
         }
 
         .brand-link {
@@ -36,72 +34,44 @@
             color: #ffffff !important;
         }
 
-        .nav-link.active {
-            background-color: #64d869 !important;
-            color: #ffffff !important;
-        }
-
-        .main-sidebar .nav-sidebar .nav-link:hover {
-            background-color: #64d869 !important;
-            color: #ffffff !important;
-        }
-
-            .main-sidebar .nav-sidebar .nav-link:hover i,
-            .main-sidebar .nav-sidebar .nav-link:hover p {
+            .brand-link span {
                 color: #ffffff !important;
             }
-
-        .content-wrapper {
-            margin-top: 0;
-            flex: 1;
-            padding: 1rem;
-        }
-
-        .main-footer {
-            background-color: #64d869;
-            padding: 10px;
-            text-align: center;
-            color: #fff;
-            margin-top: auto;
-        }
-
-        table {
-            margin-top: 10px;
-        }
 
         .table th, .table td {
             vertical-align: middle;
         }
 
-        .btn-sm i {
-            margin-right: 4px;
+        .nav-link {
+            color: #ffffff !important;
         }
 
-        .table-hover tbody tr:hover {
-            background-color: #f0f0f0;
+            .nav-link i {
+                color: #ffffff !important;
+            }
+
+        .main-header {
+            padding-top: 1rem;
         }
 
-        .content h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #000;
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
         }
 
-        .btn-editar {
-            background-color: #e2e11d;
-            color: #000;
-            border: none;
-        }
+            .section-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: #e0e1df;
+            }
 
-        .btn-eliminar {
-            background-color: #e1322d;
-            color: #fff;
-            border: none;
-        }
-
-        .btn-editar:hover,
-        .btn-eliminar:hover {
-            opacity: 0.9;
+        .btn {
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-size: 1rem;
         }
     </style>
 
@@ -114,15 +84,18 @@
                     <h2>Ventas</h2>
                 </div>
             </div>
-          
-            <div class="section-card" style="background-color: #ffffff; border-radius: 8px; padding: 20px; border: 1px solid #ddd;">
-                <h3>Listado de ventas</h3>
-                <div class="mb-3">
-                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Registrar venta</a>
-                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Consultar ventas</a>
-                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Busqueda avanzada</a>
-                </div>
 
+            <div class="section-card" style="background-color: #ffffff; border-radius: 8px; padding: 20px; border: 1px solid #ddd;">
+
+                <div class="mb-3">
+                    <a href="@Url.Action("Crear", "Producto")" class="btn btn-success">
+                        <i class="fas fa-plus-circle"></i> Registrar venta
+                    </a>
+              
+                    <a href="@Url.Action("Nota de Crédito", "Producto")" class="btn btn-success">
+                        <i class="fas fa-plus-circle"></i> Nota de crédito 
+                    </a>
+                </div>
 
                 <div class="content">
                     <div class="container-fluid">
@@ -134,17 +107,29 @@
                                     <th>Fecha de venta</th>
                                     <th>Cantidad</th>
                                     <th>Detalle</th>
-                                  
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Chía</td>
+                                    <td>2025-04-08</td>
+                                    <td>3</td>
+                                    <td>Venta en tienda principal</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Avena</td>
+                                    <td>2025-04-07</td>
+                                    <td>5</td>
+                                    <td>Venta por WhatsApp</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
 
-            </div>
         </div>
     </div>
 
@@ -153,3 +138,4 @@
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
 </body>
 </html>
+

@@ -11,24 +11,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewData["Title"] - Mi Aplicación</title>
 
-    <!-- AdminLTE y FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet">
+
+
     <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            color: #000; /* Hace que el texto general sea negro */
+        .content-wrapper, .main-footer {
+            margin-left: 250px;
         }
 
-        .wrapper {
-            display: flex;
-            min-height: 100vh;
-            flex-direction: column;
+        .main-footer {
+            background-color: #64d869;
+            padding: 1rem;
+            color: #fff;
         }
 
         .main-sidebar {
             background-color: #64d869 !important;
-            min-height: 100vh;
         }
 
         .brand-link {
@@ -36,62 +34,49 @@
             color: #ffffff !important;
         }
 
-        .nav-link.active {
-            background-color: #1f7515 !important;
-            color: #ffffff !important;
-        }
-
-        .main-sidebar .nav-sidebar .nav-link:hover {
-            background-color: #1f7515 !important;
-            color: #ffffff !important;
-        }
-
-            .main-sidebar .nav-sidebar .nav-link:hover i,
-            .main-sidebar .nav-sidebar .nav-link:hover p {
+            .brand-link span {
                 color: #ffffff !important;
             }
-
-        .content-wrapper {
-            margin-top: 0;
-            flex: 1;
-            padding: 1rem;
-        }
-
-        .main-footer {
-            background-color: #64d869;
-            padding: 10px;
-            text-align: center;
-            color: #fff;
-            margin-top: auto;
-        }
-
-        table {
-            margin-top: 10px;
-        }
 
         .table th, .table td {
             vertical-align: middle;
         }
 
-        .btn-sm i {
-            margin-right: 4px;
+        .nav-link {
+            color: #ffffff !important;
         }
 
-        .table-hover tbody tr:hover {
-            background-color: #f0f0f0;
+            .nav-link i {
+                color: #ffffff !important;
+            }
+
+        .main-header {
+            padding-top: 1rem;
         }
 
-        .content h2 {
-            font-size: 1.75rem;
-            font-weight: 600;
-            color: #000; /* Asegura que los títulos sean negros */
+        .section-card {
+            background-color: #ffffff;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+            .section-card h3 {
+                font-size: 1.5rem;
+                margin-bottom: 15px;
+                color: #e0e1df;
+            }
+
+        .btn {
+            border-radius: 5px;
+            padding: 8px 16px;
+            font-size: 1rem;
         }
     </style>
-
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- Aquí comienza el contenido de la vista -->
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
@@ -99,54 +84,82 @@
                 </div>
             </div>
 
-            <div class="content">
-                <div class="container-fluid">
-                    <div class="mb-3">
-                        <a href="@Url.Action("Crear", "Inventario")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Crear Producto</a>
-                    </div>
-
-                    <table class="table table-bordered table-hover">
-                        <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Nombre</th>
-                                <th>Descripción</th>
-                                <th>Precio</th>
-                                <th>Cantidad</th>
-                                <th>Acciones</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>@item.Id</td>
-                                    <td>@item.Nombre</td>
-                                    <td>@item.Descripcion</td>
-                                    <td>$@item.Precio</td>
-                                    <td>@item.Cantidad</td>
-                                    <td>
-                                        <a href="@Url.Action("Editar", "Inventario", new { id = item.Id })" class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i> Editar
-                                        </a>
-                                        <a href="@Url.Action("Eliminar", "Inventario", new { id = item.Id })" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
-                                            <i class="fas fa-trash-alt"></i> Eliminar
-                                        </a>
-                                    </td>
-                                </tr>
-                            }
-                        </tbody>
-                    </table>
+            <div class="section-card">
+                <div class="mb-3">
+                    <a href="@Url.Action("Crear", "Proveedor")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Crear Proveedor</a>
                 </div>
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Producto</th>
+                            <th>Cantidad</th>
+                            <th>Precio</th>
+                            <th>Fecha de Vencimiento</th>
+                            <th>Número de Lote</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Chía</td>
+                            <td>100</td>
+                            <td>$50.00</td>
+                            <td>08/04/2025</td>
+                            <td>ABC12345</td>
+                            <td>
+                                <a href="@Url.Action("Editar", "Producto", new { id = 1 })" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a href="@Url.Action("Eliminar", "Producto", new { id = 1 })" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Avena</td>
+                            <td>50</td>
+                            <td>$40.00</td>
+                            <td>15/05/2025</td>
+                            <td>XYZ98765</td>
+                            <td>
+                                <a href="@Url.Action("Editar", "Producto", new { id = 2 })" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a href="@Url.Action("Eliminar", "Producto", new { id = 2 })" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Semillas de Girasol</td>
+                            <td>150</td>
+                            <td>$30.00</td>
+                            <td>20/06/2025</td>
+                            <td>LMN54321</td>
+                            <td>
+                                <a href="@Url.Action("Editar", "Producto", new { id = 3 })" class="btn btn-warning btn-sm">
+                                    <i class="fas fa-edit"></i> Editar
+                                </a>
+                                <a href="@Url.Action("Eliminar", "Producto", new { id = 3 })" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
+                                    <i class="fas fa-trash-alt"></i> Eliminar
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
             </div>
+
+
+
         </div>
 
-
-    </div>
-
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
 </body>
 </html>

@@ -10,8 +10,8 @@ namespace EspeciasCapa.Controllers
         // Lista en memoria
         private static List<Proveedor> proveedores = new List<Proveedor>
         {
-            new Proveedor { Id = 1, Nombre = "Camisetas Jump", Correo = "camisetas.jump@example.com", Telefono = "8888-1111" },
-            new Proveedor { Id = 2, Nombre = "Bolsos Tándem", Correo = "bolsos.tandem@example.com", Telefono = "8999-2222" }
+            new Proveedor { Id = 1, Nombre = "MasXMenos", Correo = "masxmneos@example.com", Telefono = "8888-1111" },
+            new Proveedor { Id = 2, Nombre = "Megasuper", Correo = "megasuper@example.com", Telefono = "8999-2222" }
         };
 
         public IActionResult Index()
