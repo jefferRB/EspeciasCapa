@@ -1,0 +1,35 @@
+﻿@model EspeciasCapa.Models.Proveedor
+@{
+    ViewData["Title"] = "Crear Proveedor";
+    Layout = "_Layout";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <h2>Crear Proveedor</h2>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <form asp-action="Crear" method="post">
+                <div class="form-group">
+                    <label>Nombre</label>
+                    <input asp-for="Nombre" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Correo</label>
+                    <input asp-for="Correo" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Teléfono</label>
+                    <input asp-for="Telefono" class="form-control" type="number" step="0.01" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Guardar</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,43 @@
+﻿@model EspeciasCapa.Models.Contabilidad
+@{
+    ViewData["Title"] = "Editar Contabilidad";
+    Layout = "_Layout";
+}
+
+<div class="content-wrapper">
+    <div class="content-header">
+        <div class="container-fluid">
+            <h2>Editar Contabilidad</h2>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container-fluid">
+            <form asp-action="Crear" method="post">
+                <div class="form-group">
+                    <label>Descripción</label>
+                    <input asp-for="Descripcion" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label>Monto</label>
+                    <input asp-for="Monto" class="form-control" type="number" step="0.01" />
+                </div>
+                <div class="form-group">
+                    <label>Fecha</label>
+                    <input asp-for="Fecha" class="form-control" type="date" />
+                </div>
+                <div class="form-group">
+                    <label>Tipo</label>
+                    <select asp-for="Tipo" class="form-control">
+                        <option>Ingreso</option>
+                        <option>Gasto</option>
+                    </select>
+                </div>
+
+
+                <button type="submit" class="btn btn-success">Guardar Cambios</button>
+                <a href="/Contabilidad" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+

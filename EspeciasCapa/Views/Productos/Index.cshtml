@@ -13,11 +13,12 @@
 
     <!-- AdminLTE y FontAwesome -->
     <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" />
     <style>
         html, body {
             height: 100%;
             margin: 0;
-            color: #000; /* Hace que el texto general sea negro */
+            color: #000;
         }
 
         .wrapper {
@@ -84,14 +85,30 @@
         .content h2 {
             font-size: 1.75rem;
             font-weight: 600;
-            color: #000; /* Asegura que los títulos sean negros */
+            color: #000;
+        }
+
+        .btn-editar {
+            background-color: #e2e11d;
+            color: #000;
+            border: none;
+        }
+
+        .btn-eliminar {
+            background-color: #e1322d;
+            color: #fff;
+            border: none;
+        }
+
+        .btn-editar:hover,
+        .btn-eliminar:hover {
+            opacity: 0.9;
         }
     </style>
 
 </head>
 <body class="hold-transition sidebar-mini">
     <div class="wrapper">
-        <!-- Aquí comienza el contenido de la vista -->
         <div class="content-wrapper">
             <div class="content-header">
                 <div class="container-fluid">
@@ -102,7 +119,9 @@
             <div class="content">
                 <div class="container-fluid">
                     <div class="mb-3">
-                        <a href="@Url.Action("Crear", "Inventario")" class="btn btn-success"><i class="fas fa-plus-circle"></i> Crear Producto</a>
+                        <a href="@Url.Action("Crear", "Inventario")" class="btn btn-success">
+                            <i class="fas fa-plus-circle"></i> Crear Producto
+                        </a>
                     </div>
 
                     <table class="table table-bordered table-hover">
@@ -110,38 +129,20 @@
                             <tr>
                                 <th>#</th>
                                 <th>Nombre</th>
-                                <th>Descripción</th>
-                                <th>Precio</th>
+                                <th>Precio por unidad</th>
                                 <th>Cantidad</th>
+                                <th>Estado</th>
+                                <th>Categoría</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var item in Model)
-                            {
-                                <tr>
-                                    <td>@item.Id</td>
-                                    <td>@item.Nombre</td>
-                                    <td>@item.Descripcion</td>
-                                    <td>$@item.Precio</td>
-                                    <td>@item.Cantidad</td>
-                                    <td>
-                                        <a href="@Url.Action("Editar", "Inventario", new { id = item.Id })" class="btn btn-warning btn-sm">
-                                            <i class="fas fa-edit"></i> Editar
-                                        </a>
-                                        <a href="@Url.Action("Eliminar", "Inventario", new { id = item.Id })" class="btn btn-danger btn-sm" onclick="return confirm('¿Estás seguro de eliminar este producto?');">
-                                            <i class="fas fa-trash-alt"></i> Eliminar
-                                        </a>
-                                    </td>
-                                </tr>
-                            }
+                           
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
-
-
     </div>
 
     <!-- Scripts -->
