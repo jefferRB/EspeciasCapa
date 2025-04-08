@@ -17,6 +17,10 @@ namespace EspeciasCapa.Controllers
         {
             return View();
         }
+        public IActionResult Inventario()
+        {
+            return View();
+        }
 
         public IActionResult Privacy()
         {

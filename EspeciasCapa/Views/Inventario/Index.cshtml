@@ -1,0 +1,155 @@
+﻿@{
+    ViewData["Title"] = "Inventario";
+    Layout = "_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Mi Aplicación</title>
+
+    <!-- AdminLTE y FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/css/adminlte.min.css" rel="stylesheet">
+
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .wrapper {
+            display: flex;
+            min-height: 100vh;
+            flex-direction: column;
+        }
+
+        .main-sidebar {
+            background-color: #278E1B !important;
+            min-height: 100vh;
+        }
+
+        .brand-link {
+            background-color: #278E1B !important;
+        }
+
+        .nav-link.active {
+            background-color: #1f7515 !important;
+            color: #ffffff !important;
+        }
+
+        .main-sidebar .nav-sidebar .nav-link:hover {
+            background-color: #1f7515 !important;
+            color: #ffffff !important;
+        }
+
+            .main-sidebar .nav-sidebar .nav-link:hover i,
+            .main-sidebar .nav-sidebar .nav-link:hover p {
+                color: #ffffff !important;
+            }
+
+        .content-wrapper {
+            margin-top: 0;
+            flex: 1;
+            padding: 1rem;
+        }
+
+        .main-footer {
+            background-color: #f1f1f1;
+            padding: 10px;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        table {
+            margin-top: 10px;
+        }
+
+        .table th, .table td {
+            vertical-align: middle;
+        }
+
+        .btn-sm i {
+            margin-right: 4px;
+        }
+
+        .table-hover tbody tr:hover {
+            background-color: #f0f0f0;
+        }
+
+        .content h2 {
+            font-size: 1.75rem;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Aquí comienza el contenido de la vista -->
+        <div class="content-wrapper">
+            <div class="content-header">
+                <div class="container-fluid">
+                    <h2>Inventario</h2>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="mb-3">
+                        <a href="#" class="btn btn-success"><i class="fas fa-plus-circle"></i> Crear Producto</a>
+                    </div>
+
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Cantidad</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>Producto A</td>
+                                <td>Descripción del Producto A</td>
+                                <td>$10.00</td>
+                                <td>100</td>
+                                <td>
+                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>
+                                    <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Producto B</td>
+                                <td>Descripción del Producto B</td>
+                                <td>$20.00</td>
+                                <td>50</td>
+                                <td>
+                                    <a href="#" class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</a>
+                                    <a href="#" class="btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Eliminar</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <footer class="main-footer">
+            <strong>&copy; 2025 <a href="#">Mi Aplicación</a>.</strong>
+            Todos los derechos reservados.
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.1.0/dist/js/adminlte.min.js"></script>
+</body>
+</html>
